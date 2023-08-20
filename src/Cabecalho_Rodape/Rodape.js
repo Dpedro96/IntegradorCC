@@ -1,4 +1,5 @@
 import '../CSS/Rodape.css'
+import '../Container.css'
 import {FaFacebook, FaInstagram, FaTwitter, FaPinterest} from 'react-icons/fa'
 function Rodape(){
     return(

@@ -5,7 +5,7 @@
 .topo {
   height: 70px;
   width: 100%;
-  padding: 10px 0px 0px 0px;
+  padding: 5px 0px 0px 0px;
   background-color:#1ebb26;
   border-bottom: 1px solid rgb(52, 58, 52);
 }
@@ -14,7 +14,7 @@
 .topo h1{
   position: absolute;
   font-family: 'Gugi', cursive;
-  margin-top: 15px;
+  margin-top: 10px;
   padding-left: 10px;
 }
 

@@ -1,9 +1,6 @@
 
 
 .container{
-    width: 12000px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    display:flex;
+    justify-content: end;
 }

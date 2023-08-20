@@ -2,13 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
 /*FOOTER*/
 .main_footer { 
-	background-color:#00d91d; 
+	background-color:#189b1e; 
 	color:#fff; 
-	font-size:0.875em; 
 }
 
 .main_footer .content { float:left; width:90%; margin:0 5%; padding: 1em 0; }
-.container { float:left; width:100%; }
+
 
 .colfooter {  
 	float:left; 
@@ -42,7 +41,7 @@
 }
 .botao::before {
   
-  content: '';
+  content:normal;
   position: absolute;
   bottom: 50%;
   left: 0px;

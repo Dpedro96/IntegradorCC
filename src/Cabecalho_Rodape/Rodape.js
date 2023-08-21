@@ -1,9 +1,8 @@
 import '../CSS/Rodape.css'
-import '../Container.css'
 import {FaFacebook, FaInstagram, FaTwitter, FaPinterest} from 'react-icons/fa'
 function Rodape(){
     return(
-        <footer className="main_footer container">
+        <footer className="main_footer">
         <div className="content">
             <div className="colfooter">   
                 <h3 className="titleFooter"> Menu</h3>

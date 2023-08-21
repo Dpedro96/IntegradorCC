@@ -10,7 +10,7 @@
   border-radius: 30px;
   margin-top: 35px;
   margin-bottom: 40px;
-  background-color: #117c23ea;
+  background-color: rgba(255, 255, 255, 0.3);
   padding-bottom: 20px;
   padding: 10px;
 }
@@ -46,7 +46,7 @@ div.formu h1{
     width: 100%;
     height: 100%;
     padding: 10px 0;
-    background: url(../Img/imagem-banco2.jpg) no-repeat bottom center scroll;
+    background-image: linear-gradient(180deg, #B3EFB2, #7A9E7E);
     background-position: 100% 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;

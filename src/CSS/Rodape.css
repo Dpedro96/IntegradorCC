@@ -2,12 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
 /*FOOTER*/
 .main_footer { 
-	background-color:#189b1e; 
-	color:#fff; 
+  background-color: #050505;
+  color: #fff;
+  width: 100%; /* Add this line */
+  float: left;
 }
 
-.main_footer .content { float:left; width:90%; margin:0 5%; padding: 1em 0; }
-
+.main_footer .content {  width:90%; margin:0 5%; padding: 1em 0; }
 
 .colfooter {  
 	float:left; 

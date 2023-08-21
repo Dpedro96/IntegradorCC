@@ -2,7 +2,9 @@
  @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap');
  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap');
 
-
+.background{
+  background-image: linear-gradient(180deg, #c7f7c6, #6c9e72);
+}
 .background .img {
     display: table;
     width: 100%;
@@ -48,3 +50,66 @@
     -o-transition: width .25s ease-in-out;
     transition: width .25s ease-in-out;
   }
+
+  .card-container {
+    display: flex;
+}
+
+.imge {
+    width: auto;
+    height: auto;
+    max-height: 250px; /* Aumentei a altura máxima */
+    object-fit: cover;
+}
+
+.img1{
+  margin-bottom: 10px;
+}
+
+.Card {
+    height: 350px; /* Definindo uma altura fixa para o card */
+    display: flex;
+    flex-direction: column; /* Coloca o conteúdo em coluna: imagem em cima, corpo embaixo */
+}
+
+.Card.Body {
+    flex: 1; /* Faz com que o corpo ocupe todo o espaço restante depois da imagem */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Empurra os itens para o final do container */
+    overflow: hidden; /* Caso algum conteúdo exceda o espaço do card, ele ficará oculto */
+    padding: 10px; /* Um pequeno padding para espaçamento interno */
+}
+
+.Card.Title {
+    margin-bottom: 10px; /* Espaço entre*/
+}
+
+.imgCofre{
+  width: 90%;
+  margin-bottom: 50px;
+  margin-left: 50px;
+}
+
+.imgGastos{
+  width: 60%;
+  margin-left: 250px;
+}
+
+.imgRenda{
+  width: 80%;
+}
+
+
+.imgRelato{
+  width: 60%;
+
+}
+
+.session-container {
+  padding-left: 50px;  /* Adiciona espaçamento na borda esquerda */
+  padding-right: 50px; /* Adiciona espaçamento na borda direita */
+}
+
+
+

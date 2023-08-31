@@ -1,19 +1,19 @@
 import { Route, BrowserRouter, Switch } from "react-router-dom";
-import Gasto from "./Paginas/Gasto";
-import ContaCorrente from "./Paginas/ContaCorrente";
-import { Cadastro } from "./Paginas/Cadastro";
-import Login from "./Paginas/Login";
-import Cofrinho from "./Paginas/Cofrinho";
+import Gasto from "./view/Gasto";
+import ContaCorrente from "./view/ContaCorrente";
+import { Cadastro } from "./view/Cadastro";
+import Login from "./view/Login";
+import Cofrinho from "./view/Cofrinho";
 import Cabecalho from "./Cabecalho_Rodape/Cabecalho";
 import Rodape from "./Cabecalho_Rodape/Rodape";
 import { Redirect } from "react-router-dom";
-import HomePage from "./Paginas/HomePage";
-import Home from "./Paginas/Home";
+import HomePage from "./view/HomePage";
+import Home from "./view/Home";
 import { useState, useEffect } from "react";
-import Perfil from "./Paginas/Perfil";
+import Perfil from "./view/Perfil";
 import { auth } from "./Services/FirebaseAuth";
-import Relatorios from "./Paginas/Relatorios";
-import EditarContaCorrente from "./Paginas/EditarContaCorrente"
+import Relatorios from "./view/Relatorios";
+import EditarContaCorrente from "./view/EditarContaCorrente"
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const [authenticated, setAuthenticated] = useState(null);

@@ -52,59 +52,45 @@
   }
 
   .card-container {
+    margin-top: 50px;
     display: flex;
-}
-
-.imge {
-    width: auto;
-    height: auto;
-    max-height: 250px; /* Aumentei a altura máxima */
+    flex-wrap: wrap; /* Adiciona flex-wrap para que os cards quebrem para a próxima linha em telas menores */
+    justify-content: space-between; /* Espaçamento igual entre os cards */
+  }
+  
+  .imge {
+    width: 100%;
+    height: 200px;
     object-fit: cover;
-}
+  }
 
-.img1{
+/*.img1{
   margin-bottom: 10px;
-}
-
-.Card {
-    height: 350px; /* Definindo uma altura fixa para o card */
-    display: flex;
-    flex-direction: column; /* Coloca o conteúdo em coluna: imagem em cima, corpo embaixo */
-}
-
-.Card.Body {
-    flex: 1; /* Faz com que o corpo ocupe todo o espaço restante depois da imagem */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Empurra os itens para o final do container */
-    overflow: hidden; /* Caso algum conteúdo exceda o espaço do card, ele ficará oculto */
-    padding: 10px; /* Um pequeno padding para espaçamento interno */
-}
-
-.Card.Title {
-    margin-bottom: 10px; /* Espaço entre*/
-}
+}*/
 
 .imgCofre{
-  width: 90%;
+  width: 100%;
+
   margin-bottom: 50px;
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
 .imgGastos{
-  width: 60%;
-  margin-left: 250px;
+  width: 70%;
+  margin-left: 200px;
 }
 
 .imgRenda{
-  width: 80%;
+  width: 90%;
 }
 
 
 .imgRelato{
-  width: 60%;
+  width: 70%;
 
 }
+
+
 
 .session-container {
   padding-left: 50px;  /* Adiciona espaçamento na borda esquerda */
@@ -112,4 +98,37 @@
 }
 
 
+.barra{
+  margin-bottom: -10px;
+  padding-bottom: 50px;
+}
 
+/* Estilo padrão para telas grandes */
+.carousel-text {
+    font-size: 24px; 
+    /* outros estilos... */
+}
+
+/* Quando a tela tiver no máximo 992px (tela média e abaixo) */
+@media (max-width: 992px) {
+    .carousel-text {
+        font-size: 20px; 
+        /* ajuste conforme necessário */
+    }
+}
+
+/* Quando a tela tiver no máximo 768px (tela pequena e abaixo) */
+@media (max-width: 768px) {
+    .carousel-text {
+        font-size: 16px; 
+        /* ajuste conforme necessário */
+    }
+}
+
+/* Quando a tela tiver no máximo 576px (telas muito pequenas) */
+@media (max-width: 576px) {
+    .carousel-text {
+        font-size: 14px; 
+        /* ajuste conforme necessário */
+    }
+}

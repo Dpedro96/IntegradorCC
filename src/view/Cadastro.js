@@ -91,7 +91,7 @@ export const Cadastro = () => {
             </p>
   
             <p>
-              <label for="cpf_cad">Telefone:  </label>
+              <label for="tel">Telefone:  </label>
               <input id="tel" name="tel" required="required" type="tel" value={telefone} placeholder="(xx) xxxxx-xxxx"onChange={(e) =>setTelefone(e.target.value)}/> 
             </p>
                

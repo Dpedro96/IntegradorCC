@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(../Img/Imagem-Perfil.jpg) no-repeat bottom center scroll;
+  background-image: linear-gradient(180deg, #B3EFB2, #7A9E7E);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

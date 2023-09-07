@@ -1,44 +1,130 @@
 import React, { useState } from "react";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import avatar  from '../Img/avatar.png'
 import "../CSS/Perfil.css";
 function UserImage({ user }) {
-  const [isEditing, setIsEditing] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [imageUrl, setImageUrl] = useState(null);
+  const [imageAvatar, setImageAvatar] = useState(null);
+  const { user, storageUser, setUser, logout } = useContext(AuthContext);
+  const [avatarUrl, setAvatarUrl] = useState(user && user.avatarUrl)
 
-  const storage = getStorage();
+  function handleFile(e){
+    if(e.target.files[0]){
+      const image = e.target.files[0];
 
-  const handleUpload = () => {
-    const storageRef = ref(storage, `images/${user.uid}/${selectedImage.name}`);
-    uploadBytes(storageRef, selectedImage)
-      .then(() => {
-        console.log("Image uploaded successfully");
+      if(image.type === 'image/jpeg' || image.type === 'image/png'){
+        setImageAvatar(image)
+        setAvatarUrl(URL.createObjectURL(image))
+      }else{
+        alert("Envie uma imagem do tipo PNG ou JPEG")
+        setImageAvatar(null);
+        return;
+      }
+
+
+    }
+  }
+
+ 
+  async function handleUpload(){
+    const currentUid = user.uid;
+
+    const uploadRef = ref(storage, `images/${currentUid}/${imageAvatar.name}`)
+
+    const uploadTask = uploadBytes(uploadRef, imageAvatar)
+    .then((snapshot) =>{
+      
+      getDownloadURL(snapshot.ref).then( async (downloadURL) => {
+        let urlFoto = downloadURL;
+
+        const docRef = doc(db, "users", user.uid)
+        await updateDoc(docRef, {
+          avatarUrl: urlFoto,
+          nome: nome,
+        })
+        .then(() => {
+          let data = {
+            ...user,
+            nome: nome,
+            avatarUrl: urlFoto,
+          }
+   
+          setUser(data);
+          storageUser(data);
+          toast.success("Atualizado com sucesso!")
+          
+        })
+
       })
-      .catch((error) => {
-        console.error(error);
-      });
-    setIsEditing(false);
-  };
 
-  const handleFileChange = (event) => {
-    setSelectedImage(event.target.files[0]);
-    setImageUrl(URL.createObjectURL(event.target.files[0]));
-  };
+    })
+
+  }
+  
+  async function handleSubmit(e){
+    e.preventDefault();
+
+   if(imageAvatar === null && nome !== ''){
+     // Atualizar apenas o nome do user
+     const docRef = doc(db, "users", user.uid) 
+     await updateDoc(docRef, {
+       nome: nome,
+     })
+     .then(() => {
+       let data = {
+         ...user,
+         nome: nome,
+       }
+
+       setUser(data);
+       storageUser(data);
+       toast.success("Atualizado com sucesso!")
+
+     })
+
+   }else if(nome !== '' && imageAvatar !== null){
+     // Atualizar tanto nome quanto a foto
+     handleUpload()
+   }
+
+  }
 
   return (
-    <div className="user-image">
-      <img src={imageUrl || user.photoURL} alt="user" />
-      {isEditing && (
-        <div className="user-image-upload">
-          <input type="file" onChange={handleFileChange} />
-          <button onClick={handleUpload}>Upload</button>
-        </div>
-      )}
-      {!isEditing && (
-        <button className="btnImg" onClick={() => setIsEditing(true)}> <FontAwesomeIcon icon={faEdit} /></button>
-      )}
+    <div>
+      <Header/>
+
+      <div className="content">
+        <Title name="Minha conta">
+          <FiSettings size={25} />
+        </Title>
+
+       <div className="container">
+
+        <form className="form-profile" onSubmit={handleSubmit}>
+          <label className="label-avatar">
+            <span>
+              <FiUpload color="#FFF" size={25} />
+            </span>
+
+            <input type="file" accept="image/*" onChange={handleFile}  /> <br/>
+            {avatarUrl === null ? (
+              <img src={avatar} alt="Foto de perfil" width={250} height={250} />
+            ) : (
+              <img src={avatarUrl} alt="Foto de perfil" width={250} height={250} />
+            )}
+
+          </label>
+          <button type="submit">Salvar</button>
+        </form>
+
+       </div>
+
+       <div className="container">
+         <button className="logout-btn" onClick={ () => logout() }>Sair</button>
+       </div>
+
+      </div>
+
     </div>
   );
 }

@@ -10,11 +10,11 @@ import { Redirect } from "react-router-dom";
 import HomePage from "./view/HomePage";
 import Home from "./view/Home";
 import { useState, useEffect } from "react";
-import Perfil from "./view/Perfil";
+//import Perfil from "./view/Perfil";
+import Perfil from "./view/perfilalt"
 import { auth } from "./Services/FirebaseAuth";
 import Relatorios from "./view/Relatorios";
 import EditarContaCorrente from "./view/EditarContaCorrente"
-import UserImage from "./view/UserImage";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const [authenticated, setAuthenticated] = useState(null);
@@ -63,7 +63,7 @@ const Rotas = () => {
           <PrivateRoute exact path="/contaCorrente" component={ContaCorrente} />
           <PrivateRoute exact path="/gastos" component={Gasto}/>
           <PrivateRoute exact path="/cofrinho" component={Cofrinho} />
-          <PrivateRoute exact path="/perfil" component={UserImage}/>
+          <PrivateRoute exact path="/perfil" component={Perfil}/>
           <PrivateRoute exact path="/relatorios" component={Relatorios}/>
           <PrivateRoute exact path="/EditarContaCorrente" component={EditarContaCorrente}/>
         </Switch>

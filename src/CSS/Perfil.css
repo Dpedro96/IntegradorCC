@@ -3,16 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
 
 
-.user-image img {
-  width: 150px;
-  height: 150px; 
-  border-radius: 50%; 
-}
 
-.user-image .btnImg{
-  border: none; 
-  background: #ffffff;
-}
 
 .perfil-form {
   display: flex;
@@ -26,26 +17,25 @@
 }
 
 .perfil-container {
-  background: #ffffff;
+  background: #ffffffa6;
   border: 5px solid rgba(147, 184, 189,0.8);
-  padding: 50px 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px; 
   border-radius: 50px;
   margin: 100px;
 }
 
-.perfil-container h1{
+.perfil-form h1{
 text-align: center;
 font-family: 'Julius Sans One', sans-serif;
 font-size: 30pt;
 margin-bottom: 50px;
 }
 
-.perfil-foto{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-}
 
 .infosUser td{
   padding: 30px;
@@ -109,9 +99,11 @@ margin-bottom: 50px;
   border-radius: 5px;
 }
 
-
 .menu-container {
   position: absolute;
+  top: 80px;  /* Ajuste conforme necessário */
+  right: 40px; /* Ajuste conforme necessário */
+  
 }
 
 .settings.active{
@@ -121,13 +113,22 @@ margin-bottom: 50px;
 
 .settings{
   opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  position: absolute;
+  top: 100%;  /* abaixo do botão */
+  left: 0;  /* alinhado à esquerda do botão */
+  width: 150px;
 }
 
-.menu-button{
-  font-size: 20pt;
-  border: none;
-  background-color: #ffffff;
+.menu-button {  
+  background: none;   
+  border: none;       
 }
+
+
+
+
 
 .listaMenu{
   list-style: none;
@@ -148,3 +149,37 @@ margin-bottom: 50px;
   background-color: #cae5ec;
 }
 
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; 
+  border-radius: 50%; 
+}
+.perfil-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.editar-imagem {
+  margin-top: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btnImg{
+  background-color: #cae5ec;
+  border: #fff;
+  color: black;
+}
+
+.btnImg:hover{
+  background-color: #fff;
+  border: #ffffff;
+  color: black;
+}

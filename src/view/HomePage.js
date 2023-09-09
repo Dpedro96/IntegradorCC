@@ -62,7 +62,7 @@ function HomePage(){
             <Card.Text>
               Gerencie seus gastos de forma simples e fácil.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary" href="#gastos-section">Go somewhere</Button>
           </Card.Body>
         </Card>
       </div>
@@ -74,7 +74,7 @@ function HomePage(){
             <Card.Text>
               Gerencie seus gastos de forma simples e fácila
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary" href="#renda-section">Go somewhere</Button>
           </Card.Body>
         </Card>
       </div>
@@ -82,11 +82,11 @@ function HomePage(){
         <Card className="mb-4" bg="success">
           <Card.Img className='imge img1' variant="top" src={imgCofrinho} />
           <Card.Body>
-            <Card.Title>Gastos</Card.Title>
+            <Card.Title>Cofrinho</Card.Title>
             <Card.Text>
               Gerencie seus gastos de forma simples e fácila
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary" href="#cofrinho-section">Go somewhere</Button>
           </Card.Body>
         </Card>
       </div>
@@ -94,58 +94,58 @@ function HomePage(){
         <Card className="mb-4" bg="success">
           <Card.Img className='imge' variant="top" src={imgRelatorios} />
           <Card.Body>
-            <Card.Title>Gastos</Card.Title>
+            <Card.Title>Relatorio</Card.Title>
             <Card.Text>
               Gerencie seus gastos de forma simples e fácila
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button variant="primary" href="#relatorios-section">Go somewhere</Button>
           </Card.Body>
         </Card>
       </div>
     </div>
   </div> 
-  <div className="container mt-5">
+  <div className="container mt-5" id="gastos-section">
     <div className="row featurette">
-      <hr class="featurette-divider"/>
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Gastos </h2>
-        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+      <hr className="featurette-divider"/>
+      <div className="col-md-7" >
+        <h2 className="featurette-heading fw-normal lh-1">Gastos </h2>
+        <p className="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
       </div>
-      <div class="col-md-5">
+      <div className="col-md-5">
         <img className='imgGastos'src={imgGastos}/>
       </div>
     </div>
-    <div class="row featurette">
-      <hr class="featurette-divider"/>
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Renda</h2>
-        <p class="lead renda">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+    <div className="row featurette" id="renda-section">
+      <hr className="featurette-divider"/>
+      <div className="col-md-7 order-md-2" >
+        <h2 className="featurette-heading fw-normal lh-1">Renda</h2>
+        <p className="lead renda">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
       </div>
-      <div class="col-md-5 order-md-1">
+      <div className="col-md-5 order-md-1">
        <img className='imgRenda' src={imgRenda}/>
       </div>
     </div>
-    <div class="row featurette">
-      <hr class="featurette-divider"/>
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">Cofrinho</h2>
-        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+    <div className="row featurette" id="cofrinho-section">
+      <hr className="featurette-divider"/>
+      <div className="col-md-7" >
+        <h2 className="featurette-heading fw-normal lh-1">Cofrinho</h2>
+        <p className="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
       </div>
-      <div class="col-md-5">
+      <div className="col-md-5">
        <img className='imgCofre' src={imgCofrinho} />
       </div>
     </div>
-    <div class="row featurette ">
-      <hr class="featurette-divider"/>
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Relatórios</h2>
-        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+    <div className="row featurette "  id="relatorios-section">
+      <hr className="featurette-divider"/>
+      <div className="col-md-7 order-md-2">
+        <h2 className="featurette-heading fw-normal lh-1">Relatórios</h2>
+        <p className="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
       </div>
-      <div class="col-md-5 order-md-1">
+      <div className="col-md-5 order-md-1">
        <img className='imgRelato'src={imgRelatorios} />
       </div>
     </div>
-    <hr class="featurette-divider barra"/>
+    <hr className="featurette-divider barra"/>
   </div>
     </section>
   )
